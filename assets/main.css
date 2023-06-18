@@ -1,0 +1,16 @@
+.carousel > .carousel-inner > .carousel-item > img{
+    width  : 100vh;
+    height : 94vh;
+	/* margin-bottom : 2.5%; */
+}
+
+.bg {
+	background-color : #1A1A1A;
+}
+
+.sys-win-img {
+	margin-top: 24vh;
+	margin-bottom: 1vh;
+	width  : 25vh;
+    height : 25vh;
+}

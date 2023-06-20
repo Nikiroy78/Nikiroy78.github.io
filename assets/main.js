@@ -32,8 +32,8 @@ if (isMobile && !document.cookie.includes('warning_showed=true')) {
 
 function goFromMobileWarning () {
 	const currentURL = new URL(location.href);
-	fl.go(currentURL.searchParams.get("go"));
 	if (!document.cookie.includes('warning_showed=true')) document.cookie += 'warning_showed=true;';
+	fl.go(currentURL.searchParams.get("go"));
 }
 
 let mainMenuErrorHandled = false;

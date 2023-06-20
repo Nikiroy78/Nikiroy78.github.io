@@ -25,7 +25,7 @@ setTimeout(async () => fl.go(window.location.pathname + location.search), 50);
 
 let isMobile = window.screen.availWidth / window.screen.availHeight <= 1.45;
 
-if (isMobile && !document.cookie.includes('warning_showed=true;')) {
+if (isMobile && !document.cookie.includes('warning_showed=true')) {
 	// Я это уберу как только буду уверен, что на мобильной версии нет никаких проблем
 	fl.go('/mobile-warning?go=' + new URLSearchParams(location.pathname + location.search).toString().slice(0, -1));
 }
@@ -33,7 +33,7 @@ if (isMobile && !document.cookie.includes('warning_showed=true;')) {
 function goFromMobileWarning () {
 	const currentURL = new URL(location.href);
 	fl.go(currentURL.searchParams.get("go"));
-	if (!document.cookie.includes('warning_showed=true;')) document.cookie += 'warning_showed=true;';
+	if (!document.cookie.includes('warning_showed=true')) document.cookie += 'warning_showed=true;';
 }
 
 let mainMenuErrorHandled = false;

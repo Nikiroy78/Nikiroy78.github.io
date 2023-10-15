@@ -1,3 +1,4 @@
+import { blog } from "./pages/blog.js";
 /* Альтернативное главное меню */
 let altMenuSelectedPage = 1;
 const altPages = [
@@ -21,14 +22,11 @@ function setAltMenuPage(pageNumber) {
 	document.getElementById('alt-carousel-viewer').innerHTML = altPages[altMenuSelectedPage - 1];
 };
 /* Альтернативное главное меню */
-setTimeout(async () => fl.go(window.location.pathname + location.search), 50);
+setTimeout(async () => {
+	fl.go(window.location.pathname + location.search)
+}, 50);
 
 let isMobile = window.screen.availWidth / window.screen.availHeight <= 1.45;
-
-if (isMobile && !document.cookie.includes('warning_showed=true')) {
-	// Я это уберу как только буду уверен, что на мобильной версии нет никаких проблем
-	fl.go('/mobile-warning?go=' + new URLSearchParams(location.pathname + location.search).toString().slice(0, -1));
-}
 
 function goFromMobileWarning () {
 	const currentURL = new URL(location.href);
@@ -36,9 +34,28 @@ function goFromMobileWarning () {
 	fl.go(currentURL.searchParams.get("go"));
 }
 
+if (isMobile && !document.cookie.includes('warning_showed=true')) {
+	// Я это уберу как только буду уверен, что на мобильной версии нет никаких проблем
+	fl.go('/mobile-warning?go=' + new URLSearchParams(location.pathname + location.search).toString().slice(0, -1));
+}
+
+fl.bindLoad('/blog', () => {
+	blog();
+});
+
+fl.bindLoad('/main-mobile', () => {
+	document.getElementById('alt-main-prev').onclick = () => setAltMenuPage(altMenuSelectedPage - 1);
+	document.getElementById('alt-main-next').onclick = () => setAltMenuPage(altMenuSelectedPage + 1);
+});
+
+fl.bindLoad('/mobile-warning', () => {
+	document.getElementById('mobile-warning-go').onclick = () => goFromMobileWarning();
+});
+
 let mainMenuErrorHandled = false;
 
 setInterval(async () => {
+// setTimeout(async () => {
 	const navbarHeight = +(document.getElementById("navbar-main")?.offsetHeight);
 	if (!mainMenuErrorHandled && location.pathname == "/" && document.getElementById('main_img1')?.src) {
 		document.getElementById('main_img1').src = window.screen.availWidth / window.screen.availHeight > 1.45 ? "/assets/hello/1.png" : "/assets/hello/m/1.png";

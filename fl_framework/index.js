@@ -23,6 +23,7 @@ class FlCursor {
 		}
 		
 		this.curLoc = location.pathname;
+		this.events = {};
 		
 		// Включаем автоматическое обновление содержимого страницы при нажатии кнопки "Назад"
 		window.onpopstate = (event) => {
@@ -33,6 +34,10 @@ class FlCursor {
 	isCanCachePage (url) {
 		return (this.options.saveCache && this.options.ignoreCachePath.indexOf(url) == -1) ||
 		       (!this.options.saveCache && this.options.saveOnlyPath.indexOf(url) != -1);
+	}
+	
+	bindLoad (page, handler) {
+		this.events[page] = handler;
 	}
 	
 	getHttpContent (url) {
@@ -105,6 +110,13 @@ class FlCursor {
 		}
 		
 		document.getElementById('fl.area').innerHTML = this.getHttpContent(`/fl_dir${href}`);
+		
+		setTimeout(() => {
+			let page = href.split('#')[0].split('?')[0];
+			while (page.at(-1) === '/') 
+				page = page.slice(0, page.length - 1);
+			this.events[page]?.();
+		}, 0);
 	}
 	
 	go (href, refEdit = true) {

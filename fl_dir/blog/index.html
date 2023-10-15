@@ -1,5 +1,85 @@
 <center>
-	<img src="/assets/at_work.png" class="sys-win-img"></img>
-	<h1>Страница в разработке</h1>
-	<p>Страница находится в разработке и на данный момент не доступна :(</p>
+	<h1>Блог</h1>
 </center>
+<div id="blog-posts">
+	<center><p>Загрузка новостей...</p></center>
+	<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal">...</button> -->
+	
+	<div class="blog-post-card" id="post-0" style="margin-bottom: 1.5%;">
+		<center>
+			<h3 style="padding-top: 1.5%;">Пример заголовка</h3>
+			<small style="color: rgba(255,255,255,0.5); padding-bottom: 0.5%;">
+				<div>Опубликовано: 22.09.2003 в 7:00</div>
+				<div id="posted-by-0" hidden>Через telegram</div>
+			</small>
+		</center>
+		<p style="padding: 2%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<!-- Изображения -->
+		<center><div id="carouselExampleIndicators" class="carousel slide blog-post-image-carousel" data-bs-ride="carousel" id="post-images-0" hidden>
+		  <div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		  </div>
+		  <div class="carousel-inner">
+			<div class="carousel-item blog-post-image active" id="blog-img-0:0">
+			  <img src="https://warhammerart.com/wp-content/uploads/2021/08/Adeptus-Mechanicus.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item blog-post-image" id="blog-img-0:1">
+			  <img src="https://warzonestudio.com/image/catalog/blog/Admech-review/Admech-codex-review-02.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item blog-post-image" id="blog-img-0:2">
+			  <img src="https://i.pinimg.com/originals/7a/5c/0a/7a5c0a3a91db6011a49781c4016124a2.jpg" class="d-block w-100" alt="...">
+			</div>
+		  </div>
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Предыдущий</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Следующий</span>
+		  </button>
+		</div></center>
+		<!-- Файлы -->
+		<div class="accordion text-dark bg-dark" id="accordionExample" style="margin-left: 2.5%; margin-right: 2.5%; margin-top: 2.5%;" hidden>
+			<div class="accordion-item">
+				<h5 class="accordion-header" id="headingOne">
+					<button class="accordion-button bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						Файлы
+					</button>
+				</h5>
+				<div id="collapseOne" class="accordion-collapse bg-dark text-light collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<!-- <strong>Это тело аккордеона первого элемента.</strong> По умолчанию оно скрыто, пока плагин сворачивания не добавит соответствующие классы, которые мы используем для стилизации каждого элемента. Эти классы управляют общим внешним видом, а также отображением и скрытием с помощью переходов CSS. Вы можете изменить все это с помощью собственного CSS или переопределить наши переменные по умолчанию. Также стоит отметить, что практически любой HTML может быть помещен в <code>.accordion-body</code>, хотя переход ограничивает переполнение. -->
+						<p><a href="https://github.com/student-manager/student-manager/releases/download/1.1.1/windows.x64.Student.manager.portabel.zip">windows.x64.Student.manager.portabel.zip (111 Mb)</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Рекации -->
+		<button type="button" class="btn btn-outline-success" style="margin-left: 2.5%; margin-top: 1.5%; margin-bottom: 1.5%;" onclick="alert('Функция в разработке!');">Нравится (0)</button>
+		<button type="button" class="btn btn-outline-secondary" style="margin-left: 0.5%; margin-top: 1.5%; margin-bottom: 1.5%;" onclick="alert('Функция в разработке!');">Комментарии (0)</button>
+	</div>
+</div>
+
+<!-- Модальное окно просмотра изображений -->
+<div class="modal fade text-light" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-img-view modal-dialog-centered modal-dialog-scrollable">
+  <!-- <div class="modal-dialog modal-img-view"> -->
+    <div class="modal-content text-light bg-dark">
+	  <!-- <img src="https://warhammerart.com/wp-content/uploads/2021/08/Adeptus-Mechanicus.jpg"> -->
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Просмотр изображения</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <center><img id="image-viewer-url" src="https://warhammerart.com/wp-content/uploads/2021/08/Adeptus-Mechanicus.jpg" style="width: 100%;"></center>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <!-- <button type="button" class="btn btn-primary">Сохранить изменения</button> -->
+      </div>
+    </div>
+  </div>
+</div>

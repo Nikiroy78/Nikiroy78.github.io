@@ -17,9 +17,76 @@
 	background-color : #1A1A1A;
 }
 
+.release-menu {
+	/* Margin */
+	margin-left    : 35vh;
+	margin-right   : 35vh;
+	margin-top     : 5vh;
+	/* Padding */
+	padding-left   : 5vh;
+	padding-right  : 5vh;
+	padding-top    : 5vh;
+	padding-bottom : 5vh;
+	/* Style */
+	border-radius : 2.0vh;
+	background-color : #1F1F1F;
+}
+
+.release-item {
+	/* Margin */
+	margin-left    : 5vh;
+	margin-right   : 45vh;
+	margin-top     : 5vh;
+	/* Padding */
+	padding-left   : 5vh;
+	padding-right  : 5vh;
+	padding-top    : 5vh;
+	padding-bottom : 5vh;
+	/* Style */
+	border-radius : 2.0vh;
+	background-color : #252525;
+}
+
 .sys-win-img {
 	margin-top: 24vh;
 	margin-bottom: 1vh;
 	width  : 25vh;
     height : 25vh;
 }
+
+.blog-post-card {
+	border-radius : 25px;
+	background-color: #212121;
+	min-width: 250px;
+	min-height : 250px;
+	margin-left : 25%;
+	margin-right : 25%;
+}
+
+.blog-post-image-carousel {
+	margin-left: 10%;
+	margin-right: 10%;
+	max-height: 512px;
+	overflow: hidden;
+}
+
+.blog-post-image-carousel img {
+	object-fit: cover;
+}
+
+.modal-img-view {
+	width: 1920px;
+	margin: auto;
+}
+
+/* $accordion-color:green; */
+/* $accordion-padding-y:1.3rem; */
+/* $accordion-padding-x:2.5rem; */
+/* $accordion-border-color:black; */
+/* $accordion-border-width:3.5px; */
+/* $accordion-border-radius: 3rem; */
+/* $accordion-button-color:white; */
+/* $accordion-button-bg:green; */
+/* $accordion-button-active-bg: white; */
+/* $accordion-button-active-color:green; */
+/* @import "./node_modules/bootstrap/scss/bootstrap" */

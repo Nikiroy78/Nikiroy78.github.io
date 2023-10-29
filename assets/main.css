@@ -79,6 +79,15 @@
 	margin: auto;
 }
 
+.password-manger-form {
+	margin-left : 30%;
+	margin-right : 30%;
+	padding : 10px;
+	padding-left : 65px;
+	padding-right : 65px;
+	border-radius : 15px;
+}
+
 /* $accordion-color:green; */
 /* $accordion-padding-y:1.3rem; */
 /* $accordion-padding-x:2.5rem; */

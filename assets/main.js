@@ -1,4 +1,5 @@
 import { blog } from "./pages/blog.js";
+import { passwordManager } from "./pages/password-manager.js";
 /* Альтернативное главное меню */
 let altMenuSelectedPage = 1;
 const altPages = [
@@ -41,6 +42,9 @@ if (isMobile && !document.cookie.includes('warning_showed=true')) {
 
 fl.bindLoad('/blog', () => {
 	blog();
+});
+fl.bindLoad('/password-manager', () => {
+	passwordManager();
 });
 
 fl.bindLoad('/main-mobile', () => {

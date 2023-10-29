@@ -1,0 +1,28 @@
+<center>
+	<h1 style="margin-top: 5px; margin-bottom: 15px;">Менеджер паролей онлайн</h1>
+</center>
+<div class="password-manger-form bg-light text-dark">
+	<form>
+		<div class="mb-3">
+			<center><label class="form-label">Ключевое слово</label></center>
+			<input type="password" class="form-control" id="keyword" aria-describedby="kwHelp">
+			<div id="kwHelp" class="form-text">Является "корневым паролем" для генерации паролей</div>
+		</div>
+		<div class="mb-3">
+			<center><label class="form-label">Логин в системе</label></center>
+			<input type="text" class="form-control" id="login" aria-describedby="loginHelp">
+			<div id="loginHelp" class="form-text">Желательно использовать следующий приоритет: логин->почта->номер телефона; это поможет вам знать корректный пароль от системы</div>
+		</div>
+		<div class="mb-3">
+			<center><label class="form-label">Сервис</label></center>
+			<input type="text" class="form-control" id="service" aria-describedby="serviceHelp">
+			<div id="serviceHelp" class="form-text">Используйте доменные имена без сокращений (vk.com; yandex.ru; mail.yandex.ru; youtube.com; etc.)</div>
+		</div>
+		<div class="mb-3">
+			<center><label class="form-label">Сгенерированный пароль</label></center>
+			<input type="password" class="form-control" id="generated-password" aria-describedby="genHelp" readonly>
+			<div id="genHelp" class="form-text">Сгенерированный пароль по формуле: base64(sha1(`${keyword}::${service}::${login}`)) + "#"</div>
+		</div>
+	</form>
+	<center><button type="submit" class="btn btn-primary" id="generate-password">Сгенерировать</button> <button class="btn btn-secondary" id="copy-password">Скопировать</button></center>
+</div>

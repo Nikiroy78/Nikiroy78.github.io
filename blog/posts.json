@@ -47,6 +47,23 @@
 				"voice"   : []
 			},
 			"forward" : null
+		},
+		{
+			"title"       : "Привод Arcturus",
+			"date"        : 1718360744,
+			"data"        : "Купил себе привод от Arcturus. Потестил - норм, буду гонять с ним дальше",
+			"categories"  : ["personal"],
+			"attachments" : {
+				"images"  : [
+					"/assets/posts/photo_2024-05-28_21-15-13.jpg"
+				],
+				"files"   : [],
+				"video"   : [],
+				"youtube" : [],
+				"audio"   : [],
+				"voice"   : []
+			},
+			"forward" : null
 		}
 	]
 }

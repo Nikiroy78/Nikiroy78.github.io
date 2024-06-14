@@ -15,7 +15,15 @@ function testBlock () {
 	bindImageView('blog-img-0:2', 'https://i.pinimg.com/originals/7a/5c/0a/7a5c0a3a91db6011a49781c4016124a2.jpg');
 }
 
-function dateFormater (value) {
+function dateFormater (value, isMonth = false) {
+	if (isMonth) {
+		return [
+			"01", "02", "03",
+			"04", "05", "06",
+			"07", "08", "09",
+			"10", "11", "12"
+		][+value];
+	}
 	value = value.toString();
 	if (value.length === 1) value = '0' + value;
 	return value;
@@ -38,11 +46,11 @@ function generateItem (item, index) {
 	} : imagesDisplay(item, index);
 	// console.log(date);
 	
-	const page = `<div class="blog-post-card" id="post-${index}" style="margin-bottom: 1.5%;">
+	const page = `	<div class="blog-post-card" id="post-${index}" style="margin-bottom: 1.5%;">
 		<center>
 			<h3 style="padding-top: 1.5%;">${item.title}</h3>
 			<small style="color: rgba(255,255,255,0.5); padding-bottom: 0.5%;">
-				<div>Опубликовано: ${dateFormater(date.getDate())}.${dateFormater(date.getMonth())}.${date.getFullYear()} в ${date.getHours()}:${dateFormater(date.getMinutes())}</div>
+				<div>Опубликовано: ${dateFormater(date.getDate())}.${dateFormater(date.getMonth(), true)}.${date.getFullYear()} в ${date.getHours()}:${dateFormater(date.getMinutes())}</div>
 				<div id="posted-by-${index}" hidden>Через telegram</div>
 			</small>
 		</center>

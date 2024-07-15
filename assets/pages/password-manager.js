@@ -1,4 +1,4 @@
-import {} from "/assets/sha1.js";
+import {} from "/assets/sha1-functional.js";
 import { hexToBase64 } from "/assets/encode-converter.js";
 import { copyTextToClipboard } from "/assets/clipboard.js";
 

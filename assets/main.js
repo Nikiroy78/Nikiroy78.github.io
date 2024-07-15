@@ -62,7 +62,7 @@ setInterval(async () => {
 // setTimeout(async () => {
 	const navbarHeight = +(document.getElementById("navbar-main")?.offsetHeight);
 	if (!mainMenuErrorHandled && location.pathname == "/" && document.getElementById('main_img1')?.src) {
-		document.getElementById('main_img1').src = window.screen.availWidth / window.screen.availHeight > 1.45 ? "/assets/hello/1.gif" : "/assets/hello/m/1.gif";
+		document.getElementById('main_img1').src = window.screen.availWidth / window.screen.availHeight > 1.45 ? "/assets/hello/1.webp" : "/assets/hello/m/1.webp";
 		document.getElementById('main_img2').src = window.screen.availWidth / window.screen.availHeight > 1.45 ? "/assets/hello/2.png" : "/assets/hello/m/2.png";
 		document.getElementById('main_img3').src = window.screen.availWidth / window.screen.availHeight > 1.45 ? "/assets/hello/3.png" : "/assets/hello/m/3.png";
 	}
@@ -76,7 +76,7 @@ setInterval(async () => {
 		mainMenuErrorHandled = true;
 		setTimeout(async () => {
 			fl.goJust('/main-mobile', false);
-			document.getElementsByTagName('body')[0].style.backgroundImage = 'url("/assets/hello/m/1.gif")';
+			document.getElementsByTagName('body')[0].style.backgroundImage = 'url("/assets/hello/m/1.webp")';
 		}, 150);
 	}
 	else if (mainMenuErrorHandled && window.screen.availWidth >= 768 && location.pathname == "/") {  // Вернуть нормальную версию вёрстки
